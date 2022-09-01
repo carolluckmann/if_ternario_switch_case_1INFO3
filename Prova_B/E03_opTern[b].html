@@ -10,11 +10,18 @@
     //Apresente a mensagem final, de acordo com o cenário descrito acima.
 
     //ENTRADA
-
+    const t1 = Number(prompt(`Qual a temperatura mínima de quarta-feira?`))    
+    const t2 = Number(prompt(`Qual a temperatura mínima de terça-feira?`))
+    const t3 = Number(prompt(`Qual a temperatura mínima de segunda-feira?`))
+    const t4 = Number(prompt(`Qual a temperatura mínima de domingo?`))
+    const mediaTemperaturas = (t1 + t2 + t3 + t4) / 4
+    let resultado;
 
     //PROCESSAMENTO
-
+    (mediaTemperaturas <= 10) ? resultado = `FRIO INTENSO`
+    : (mediaTemperaturas <= 20) ? resultado = `FRIO MODERADO`
+    : resultado = `PARTIU PRAIA`;
 
     //SAÍDA
-
+    document.write(resultado);
 </script>

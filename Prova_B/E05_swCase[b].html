@@ -11,11 +11,25 @@
     //DICA: Use M para Manhã, T para Tarde, N para Noite.
 
     //ENTRADA
-
-
+    const turnoTrabalho = prompt(`Informe qual seu turno de trabalho M-Manhã|T-tarde|N-noite`).toUpperCase();
+    const salarioPorHora = Number(prompt(`Quanto você recebe por hora?`))
+    let resultado;
     //PROCESSAMENTO
-
+    switch (turnoTrabalho) {
+        case `M`:
+            resultado = `Valor da sua hora de trabalho: R$${(salarioPorHora * 1.02).toFixed(2)}.`
+            break;
+        case `T`: 
+            resultado = `Valor da sua hora de trabalho: R$${(salarioPorHora*1.04).toFixed(2)}.`
+            break;
+        case `N`: 
+            resultado = `Valor da sua hora de trabalho: R$${(salarioPorHora*1.07).toFixed(2)}.`
+            break;
+        default: 
+            resultado = `Turno inválido.`
+            break;
+    }
 
     //SAÍDA
-
+    document.write(resultado);
 </script>

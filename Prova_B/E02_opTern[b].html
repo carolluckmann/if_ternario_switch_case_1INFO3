@@ -11,11 +11,14 @@
     //Apresente o valor final a ser pago pela residência, considerando o juro estabelecido para a quantidade de meses de financiamento.
 
     //ENTRADA
-
+    const valorCasa = Number (prompt(`Insira o valor da residência que deseja comprar:`))
+    const financiamento = Number(prompt(`Insira em quantos meses pagará o financiamento:`))
+    let resultado;
 
     //PROCESSAMENTO
-
-
+    (financiamento <= 120) ? resultado = `O valor final pago será R$${(valorCasa * 1.55).toFixed(2)}.`
+    : (financiamento <= 240) ? resultado = `O valor final pago será R$${(valorCasa * 1.65).toFixed(2)}.`
+    : resultado = `O valor final pago será R$${(valorCasa * 1.85).toFixed(2)}.`; 
     //SAÍDA
-
+    document.write (resultado);
 </script>

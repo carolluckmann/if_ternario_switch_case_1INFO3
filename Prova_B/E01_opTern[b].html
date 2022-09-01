@@ -11,11 +11,23 @@
     //Calcule os pontos e apresente o nível de experiência do Profissional.
 
     //ENTRADA
-
+    const anosExperiencia = Number(prompt(`Quantos anos possui de experiência profissional?`))
+    const graduacao = prompt(`Possui graduação? S-sim|N-não`).toUpperCase();
+    const posGraduacao = prompt(`Possui pós-graduação? S-sim|N-não`).toUpperCase();
+    const voluntariado = prompt(`Faz voluntariado? S-sim|N-não`).toUpperCase();
+    const pontos = (anosExperiencia * 1.5)
+    let pontosFinais;
+    let resultado;
 
     //PROCESSAMENTO
-
+    (graduacao == `S` && posGraduacao == `S` && voluntariado == `S`) ?  pontosFinais = pontos + 30
+    : (graduacao == `S` && posGraduacao == `N` && voluntariado == `S`) ? pontosFinais = pontos + 20
+    : (graduacao == `S` && posGraduacao == `N` && voluntariado == `N`) ? pontosFinais = pontos + 10
+    : pontosFinais = pontos;
+    
+    (pontosFinais <= 35) ? resultado = `Em evolução. Você possui ${pontosFinais} pontos.`
+    : resultado = `Veterano. Você possui ${pontosFinais} pontos.`
 
     //SAÍDA
-
+    document.write(resultado);
 </script>
